@@ -1,0 +1,144 @@
+:root {
+    --light-bg: #f0f0f0;
+    --light-text: #000;
+    --light-card-bg: #fff;
+    --dark-bg: #333;
+    --dark-text: #fff;
+    --dark-card-bg: #444;
+    --transition-duration: 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.container {
+    background: var(--light-card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    transition: background-color var(--transition-duration);
+}
+
+body.dark-mode .container {
+    background: var(--dark-card-bg);
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow var(--transition-duration);
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+button:hover {
+    background-color: #218838;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+body.dark-mode li {
+    background: var(--dark-card-bg);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button.done-btn {
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button.done-btn:hover {
+    background-color: #0056b3;
+}
+
+button.delete-btn {
+    background-color: #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
